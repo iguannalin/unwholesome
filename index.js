@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     summary.innerText = "am i in the right place?";
     details.appendChild(summary);
     details.onclick = onClickDetails;
-    if (count % 2 == 0) {
+    if (count % 10 == 0) {
       details.innerHTML += "yes you are";
       details.style.top = `${h/2}px`;
       details.style.left = `${w/2}px`;
