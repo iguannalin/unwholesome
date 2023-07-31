@@ -5,12 +5,15 @@ window.addEventListener("load", () => {
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
 
-  let offset = 100;
-  let w = window.innerWidth - offset;
-  let h = window.innerHeight - offset;
+  let wOffset = window.innerWidth / 15;
+  let hOffset = window.innerHeight / 10;
+  let w = window.innerWidth - wOffset;
+  let h = window.innerHeight - hOffset
 
   function onClickDetails(e) {
     setTimeout(createDetailsElement, 700);
+    e.target.onclick = null;
+    if (e.target.parentElement) e.target.parentElement.onclick = null;
   }
 
   function createDetailsElement() {
@@ -20,9 +23,8 @@ window.addEventListener("load", () => {
     details.appendChild(summary);
     details.innerHTML += "keep clicking";
     details.onclick = onClickDetails;
-    details.style.top = `${getRandomInt(offset, h)}px`;
-    details.style.left = `${getRandomInt(offset, w)}px`;
-    console.log(details.style.top);
+    details.style.top = `${getRandomInt(wOffset, h)}px`;
+    details.style.left = `${getRandomInt(hOffset, w)}px`;
     document.body.appendChild(details);
   }
 

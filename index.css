@@ -27,12 +27,15 @@ details {
   cursor: pointer;
 }
 
+details[open] {
+  cursor: default;
+}
+
 details ::marker {
   border: none;
   border-radius: 2px;
   content: "⏵ ";
 }
-
 details[open] ::marker {
   content: "▾ ";
 }
