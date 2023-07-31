@@ -5,10 +5,11 @@ window.addEventListener("load", () => {
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
 
-  let wOffset = window.innerWidth / 15;
-  let hOffset = window.innerHeight / 10;
+  let wOffset = window.innerWidth / 20;
+  let hOffset = window.innerHeight / 15;
   let w = window.innerWidth - wOffset;
-  let h = window.innerHeight - hOffset
+  let h = window.innerHeight - hOffset;
+  let count = 1;
 
   function onClickDetails(e) {
     setTimeout(createDetailsElement, 700);
@@ -21,7 +22,8 @@ window.addEventListener("load", () => {
     const summary = document.createElement("summary");
     summary.innerText = "am i in the right place?";
     details.appendChild(summary);
-    details.innerHTML += "keep clicking";
+    details.innerHTML += (count % 10 == 0) ? "yes you are" : "keep clicking";
+    count++;
     details.onclick = onClickDetails;
     details.style.top = `${getRandomInt(wOffset, h)}px`;
     details.style.left = `${getRandomInt(hOffset, w)}px`;
