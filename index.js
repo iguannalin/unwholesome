@@ -25,8 +25,8 @@ window.addEventListener("load", () => {
     details.onclick = onClickDetails;
     if (count % 10 == 0) {
       details.innerHTML += "yes you are";
-      details.style.top = `${h/2}px`;
-      details.style.left = `${w/2}px`;
+      details.style.top = `${window.innerHeight/3}px`;
+      details.style.left = `${window.innerWidth/3}px`;
     } else {
       details.innerHTML += "keep clicking";
       details.style.top = `${getRandomInt(hOffset, h)}px`;
